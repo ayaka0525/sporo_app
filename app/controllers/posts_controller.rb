@@ -19,5 +19,14 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+  def update
+    # updateアクションの中身を作成してください
+    @post = Post.find_by(id: params[:id])
+    @post.content = params[:content]
+    @post.save
+    
+    redirect_to("/posts/index")
+  end
+
 
 end
